@@ -1,2 +1,2 @@
-# odinProject-hashMap
-A simpla hashmap as an assignment for Odin Project.
+## Odin Project - HashMap
+A simple hashmap as an assignment for Odin Project.
