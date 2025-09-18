@@ -1,10 +1,18 @@
+import Node from "./classNode.js";
+import LinkedList from "./classLinkedList.js";
+
 class HashMap {
     constructor(){
         this.loadFactor = 0.75;
         this.capacity = 0;
         this.buckets = [];
 
-        for(let i = 0; i < 16; i++){this.buckets.push ([])};
+        for(let i = 0; i < 16; i++){this.buckets.push (new LinkedList())};
+    }
+
+    getBucket(){
+        //temporary function
+        return this.buckets[3];
     }
 
     hash(key) {
@@ -18,6 +26,12 @@ class HashMap {
         }
 
         return hashCode;
+    }
+
+    set(key, value){
+        const bucketIndex = this.hash(key);
+        console.log(`Writing {${key}:${value}} to bucket ${bucketIndex}`)
+        this.buckets[bucketIndex].append(value);
     }
 
 
