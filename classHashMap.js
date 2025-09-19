@@ -10,9 +10,11 @@ class HashMap {
         for(let i = 0; i < 16; i++){this.buckets.push (new LinkedList())};
     }
 
-    getBucket(){
+    getDebug(){
         //temporary function
-        return this.buckets[3];
+        console.log("Check for value")
+        console.log(this.buckets[3].contains("Sita"))
+        return this.buckets[3].toString();
     }
 
     hash(key) {
@@ -30,11 +32,19 @@ class HashMap {
 
     set(key, value){
         const bucketIndex = this.hash(key);
-        console.log(`Writing {${key}:${value}} to bucket ${bucketIndex}`)
-        this.buckets[bucketIndex].append(value);
+        //console.log(`Writing {${key}:${value}} to bucket ${bucketIndex}`)
+
+        const position = this.buckets[bucketIndex].find(key);
+
+        if(position){
+            console.log(`Existing data found for ${key}, removing...`)
+            this.buckets[bucketIndex].removeAt(position);
+        }
+
+        this.buckets[bucketIndex].append({
+            [key] : value,
+        });
     }
-
-
 };
 
 export default HashMap;
