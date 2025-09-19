@@ -15,7 +15,7 @@ class HashMap {
     checkHashLoad(){
         let currentLoad = this.length();
         let aboveThreshold = false;
-        if(currentLoad >= this.buckets.length * this.loadFactor){
+        if(currentLoad > this.buckets.length * this.loadFactor){
             aboveThreshold = true;
         };
         if(aboveThreshold){
@@ -57,7 +57,7 @@ class HashMap {
         const position = this.buckets[bucketIndex].find(key);
 
         if(position){
-            console.log(`Existing data found for ${key}, removing...`)
+            //console.log(`Existing data found for ${key}, removing...`)
             this.buckets[bucketIndex].removeAt(position);
         }
 

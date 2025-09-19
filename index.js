@@ -26,9 +26,9 @@ console.log(`Checking if "dog" exists: ${hashMap.has("dog")}`)
 console.log(`\nTrying to retrieve data for "apple": ${hashMap.get("apple")}`)
 console.log(`Trying to retrieve data for "space": ${hashMap.get("space")}`)
 
-console.log(`Try to remove "banana" key: ${hashMap.remove("banana")}`)
-console.log("\nList all entries in the hash table:")
-console.log(hashMap.entries())
+//console.log(`Try to remove "banana" key: ${hashMap.remove("banana")}`)
+//console.log("\nList all entries in the hash table:")
+//console.log(hashMap.entries())
 
 console.log(`\nThe length of the hashmap is ${hashMap.length()}`)
 //console.log("Clearing the hash table")
@@ -43,3 +43,6 @@ console.log(hashMap.values())
 
 console.log("\nList all entries in the hash table:")
 console.log(hashMap.entries())
+
+console.log("Test hash table expansion when load exceeded")
+hashMap.set('moon', 'silver')
