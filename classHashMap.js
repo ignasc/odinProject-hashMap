@@ -116,6 +116,19 @@ class HashMap {
         }
         return valueArray;
     }
+
+    entries(){
+        let entryArray = [];
+        let bucketEntries;
+
+        for (let i = 0; i < this.buckets.length; i++) {
+            const bucket = this.buckets[i];
+
+            bucketEntries = bucket.entries();
+            entryArray = [...entryArray, ...bucketEntries];
+        }
+        return entryArray;
+    }
 };
 
 export default HashMap;

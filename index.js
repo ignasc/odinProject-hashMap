@@ -34,3 +34,6 @@ console.log(hashMap.keys())
 
 console.log("\nList all values in the hash table:")
 console.log(hashMap.values())
+
+console.log("\nList all entries in the hash table:")
+console.log(hashMap.entries())
