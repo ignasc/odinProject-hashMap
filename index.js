@@ -19,3 +19,7 @@ console.log(`Checking if "Beta" exists: ${hashMap.has("Beta")}`)
 
 console.log(`\nTrying to retrieve data for "Rama": ${hashMap.get("Rama")}`)
 console.log(`Trying to retrieve data for "Gama": ${hashMap.get("Gama")}`)
+
+console.log(`Try to remove "Sita" key: ${hashMap.remove("Sita")}`)
+console.log("Current hash map bucket:")
+console.log(hashMap.getDebug())

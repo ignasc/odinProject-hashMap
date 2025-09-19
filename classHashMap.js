@@ -63,6 +63,18 @@ class HashMap {
 
         return null;
     }
+
+    remove(key){
+        const bucketIndex = this.hash(key);
+
+        const position = this.buckets[bucketIndex].find(key);
+
+        if(position){
+            this.buckets[bucketIndex].removeAt(position);
+            return true;
+        };
+        return false;
+    }
 };
 
 export default HashMap;
