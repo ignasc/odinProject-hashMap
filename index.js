@@ -12,3 +12,7 @@ console.log("Current hash map bucket:")
 console.log(hashMap.getDebug())
 console.log(hashMap.hash("Rama"))
 console.log(hashMap.hash("Sita"))
+
+console.log(`\nChecking if "Rama" exists: ${hashMap.has("Rama")}`)
+console.log(`Checking if "Gama" exists: ${hashMap.has("Gama")}`)
+console.log(`Checking if "Beta" exists: ${hashMap.has("Beta")}`)

@@ -45,6 +45,14 @@ class HashMap {
             [key] : value,
         });
     }
+
+    has(key){
+        const bucketIndex = this.hash(key);
+
+        return this.buckets[bucketIndex].contains(key);
+    }
+
+    get(key){}
 };
 
 export default HashMap;
