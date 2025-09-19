@@ -52,7 +52,17 @@ class HashMap {
         return this.buckets[bucketIndex].contains(key);
     }
 
-    get(key){}
+    get(key){
+        const bucketIndex = this.hash(key);
+
+        const position = this.buckets[bucketIndex].find(key);
+
+        if(position){
+            return this.buckets[bucketIndex].at(position)[key];
+        };
+
+        return null;
+    }
 };
 
 export default HashMap;

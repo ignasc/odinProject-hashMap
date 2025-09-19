@@ -16,3 +16,6 @@ console.log(hashMap.hash("Sita"))
 console.log(`\nChecking if "Rama" exists: ${hashMap.has("Rama")}`)
 console.log(`Checking if "Gama" exists: ${hashMap.has("Gama")}`)
 console.log(`Checking if "Beta" exists: ${hashMap.has("Beta")}`)
+
+console.log(`\nTrying to retrieve data for "Rama": ${hashMap.get("Rama")}`)
+console.log(`Trying to retrieve data for "Gama": ${hashMap.get("Gama")}`)
