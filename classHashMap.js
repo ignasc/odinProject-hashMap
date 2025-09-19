@@ -7,14 +7,34 @@ class HashMap {
         this.capacity = 0;
         this.buckets = [];
 
-        for(let i = 0; i < 16; i++){this.buckets.push (new LinkedList())};
+        this.bucketSize = 16;
+
+        for(let i = 0; i < this.bucketSize; i++){this.buckets.push (new LinkedList())};
     }
 
-    getDebug(){
-        //temporary function
-        console.log("Check for value")
-        console.log(this.buckets[3].contains("Sita"))
-        return this.buckets[3].toString();
+    checkHashLoad(){
+        let currentLoad = this.length();
+        let aboveThreshold = false;
+        if(currentLoad >= this.buckets.length * this.loadFactor){
+            aboveThreshold = true;
+        };
+        if(aboveThreshold){
+            this.expandHashTable();
+        };
+    }
+
+    expandHashTable(){
+        let allEntries = this.entries();
+        this.bucketSize *= 2;
+        this.buckets.length = 0;
+
+        for(let i = 0; i < this.bucketSize; i++){this.buckets.push (new LinkedList())};
+
+        for(let i = 0; i < allEntries.length; i++){
+            const dataNode = allEntries[i];
+
+            this.set(dataNode[0], dataNode[1])
+        };
     }
 
     hash(key) {
@@ -44,6 +64,8 @@ class HashMap {
         this.buckets[bucketIndex].append({
             [key] : value,
         });
+
+        this.checkHashLoad();
     }
 
     has(key){
