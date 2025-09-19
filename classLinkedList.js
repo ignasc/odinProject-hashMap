@@ -104,7 +104,7 @@ class LinkedList {
 
         let currentNode = this.headNode;
         while (currentNode) {
-            if(currentNode.data == value){
+            if(currentNode.data.hasOwnProperty(value)){
                 return true;
             };
             currentNode = currentNode.nextNode;
@@ -120,7 +120,7 @@ class LinkedList {
         let currentPosition = 1;
 
         while (currentNode) {
-            if(currentNode.data == value){
+            if(currentNode.data.hasOwnProperty(value)){
                 return currentPosition;
             };
             currentNode = currentNode.nextNode;
@@ -136,11 +136,13 @@ class LinkedList {
         let currentNode = this.headNode;
 
         while(currentNode.nextNode){
-            listString += `( ${currentNode.data} ) -> `;
+            const dataKey = Object.keys(currentNode.data)
+            listString += `( ${dataKey}:${currentNode.data[dataKey]} ) -> `;
             currentNode = currentNode.nextNode;
         }
 
-        listString += `( ${currentNode.data} ) -> null`;
+        const dataKey = Object.keys(currentNode.data)
+        listString += `( ${dataKey}:${currentNode.data[dataKey]} ) -> null`;
         return listString;
     }
 
