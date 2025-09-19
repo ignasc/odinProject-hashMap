@@ -24,4 +24,7 @@ console.log(`Try to remove "Sita" key: ${hashMap.remove("Sita")}`)
 console.log("Current hash map bucket:")
 console.log(hashMap.getDebug())
 
-console.log(`The lenght of the hashmap is ${hashMap.length()}`)
+console.log(`The length of the hashmap is ${hashMap.length()}`)
+console.log("Clearing the hash table")
+hashMap.clear()
+console.log(`The length of the hashmap is ${hashMap.length()}`)

@@ -85,6 +85,11 @@ class HashMap {
         }
         return totalLength;
     }
+
+    clear(){
+        this.buckets = [];
+        for(let i = 0; i < 16; i++){this.buckets.push (new LinkedList())};
+    };
 };
 
 export default HashMap;
