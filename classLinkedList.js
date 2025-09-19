@@ -201,6 +201,19 @@ class LinkedList {
             currentPosition++;
         };
     }
+
+    keys(){
+        if(!this.headNode){return []};
+
+        let currentNode = this.headNode;
+        const keys = [];
+
+        while (currentNode) {
+            keys.push(Object.keys(currentNode.data)[0]);
+            currentNode = currentNode.nextNode;
+        }
+        return keys;
+    }
 };
 
 export default LinkedList;

@@ -90,6 +90,19 @@ class HashMap {
         this.buckets = [];
         for(let i = 0; i < 16; i++){this.buckets.push (new LinkedList())};
     };
+
+    keys(){
+        let keyArray = [];
+        let bucketKeys;
+
+        for (let i = 0; i < this.buckets.length; i++) {
+            const bucket = this.buckets[i];
+
+            bucketKeys = bucket.keys();
+            keyArray = [...keyArray, ...bucketKeys];
+        }
+        return keyArray;
+    }
 };
 
 export default HashMap;
