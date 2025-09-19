@@ -75,6 +75,16 @@ class HashMap {
         };
         return false;
     }
+
+    length(){
+        let totalLength = 0;
+
+        for (let i = 0; i < this.buckets.length; i++) {
+            const bucket = this.buckets[i];
+            totalLength += bucket.size();
+        }
+        return totalLength;
+    }
 };
 
 export default HashMap;

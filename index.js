@@ -23,3 +23,5 @@ console.log(`Trying to retrieve data for "Gama": ${hashMap.get("Gama")}`)
 console.log(`Try to remove "Sita" key: ${hashMap.remove("Sita")}`)
 console.log("Current hash map bucket:")
 console.log(hashMap.getDebug())
+
+console.log(`The lenght of the hashmap is ${hashMap.length()}`)
