@@ -103,6 +103,19 @@ class HashMap {
         }
         return keyArray;
     }
+
+    values(){
+        let valueArray = [];
+        let bucketValues;
+
+        for (let i = 0; i < this.buckets.length; i++) {
+            const bucket = this.buckets[i];
+
+            bucketValues = bucket.values();
+            valueArray = [...valueArray, ...bucketValues];
+        }
+        return valueArray;
+    }
 };
 
 export default HashMap;

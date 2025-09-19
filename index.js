@@ -31,3 +31,6 @@ console.log(`\nThe length of the hashmap is ${hashMap.length()}`)
 
 console.log("\nList all keys in the hash table:")
 console.log(hashMap.keys())
+
+console.log("\nList all values in the hash table:")
+console.log(hashMap.values())

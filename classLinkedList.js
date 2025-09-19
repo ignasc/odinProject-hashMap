@@ -214,6 +214,20 @@ class LinkedList {
         }
         return keys;
     }
+
+    values(){
+        if(!this.headNode){return []};
+
+        let currentNode = this.headNode;
+        const values = [];
+
+        while (currentNode) {
+            const key = Object.keys(currentNode.data)[0];
+            values.push(currentNode.data[key]);
+            currentNode = currentNode.nextNode;
+        }
+        return values;
+    }
 };
 
 export default LinkedList;
